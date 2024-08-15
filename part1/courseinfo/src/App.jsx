@@ -1,17 +1,17 @@
-const Header = (data) => {
+const Header = (props) => {
   return (
-    <h1>{data.title}</h1>
+    <h1>{props.title}</h1>
   )
 }
 
-const Part = (data) => {
+const Part = (props) => {
   return (
-    <p>{data.name} {data.exercises}</p>
+    <p>{props.name} {props.exercises}</p>
   )
 }
 
-const Content = (data) => {
-  const parts = data.parts;
+const Content = (props) => {
+  const parts = props.parts;
   
   return (
     <div>
@@ -22,8 +22,8 @@ const Content = (data) => {
   )
 }
 
-const Total = (data) => {
-  const count = data.parts[0].exercises + data.parts[1].exercises + data.parts[2].exercises
+const Total = (props) => {
+  const count = props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises
 
   return (
     <p>Number of exercises {count}</p>
