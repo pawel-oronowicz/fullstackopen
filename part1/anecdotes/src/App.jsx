@@ -1,5 +1,11 @@
 import { useState } from 'react'
 
+const Header = (props) => {
+  return (
+    <h1>{props.title}</h1>
+  )
+}
+
 const GetRandomInt = (count) => {
   return Math.floor(Math.random() * count);
 }
@@ -19,7 +25,7 @@ const ButtonVote = ({ handleClick }) => (
 const Anecdote = ({ anecdote, votes }) => {
   return (
     <div>
-      <h1>Anecdote of the day</h1>
+      <Header title={"Anecdote of the day"} />
       <p>{anecdote}</p>
       <p>has {votes} votes</p>
     </div>
@@ -29,7 +35,7 @@ const Anecdote = ({ anecdote, votes }) => {
 const MostVotedAnecdote = ({ anecdote, votes }) => {
   return (
     <div>
-      <h1>Anecdote with most votes</h1>
+      <Header title={"Anecdote with most votes"} />
       <p>{anecdote}</p>
       <p>has {votes} votes</p>
     </div>
