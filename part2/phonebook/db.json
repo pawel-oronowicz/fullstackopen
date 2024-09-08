@@ -1,0 +1,8 @@
+{
+    "persons":[
+        { "id": 1, "name": "Harry Potter", "number": "012-345-6789" },
+        { "id": 2, "name": "Hermione Granger", "number": "454-565-7888" },
+        { "id": 3, "name": "Ron Weasley", "number": "744-565-3214" },
+        { "id": 4, "name": "Albus Dumbledore", "number": "556-778-9891" }
+    ]
+  }
