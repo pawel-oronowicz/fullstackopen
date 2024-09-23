@@ -1,4 +1,4 @@
-const CountryList = ({ countries, viewCountry }) => {
+const CountryList = ({ countries, showCountry }) => {
     if(countries.length > 10) {
         return (
             <p>Too many countries, specify another filter</p>
@@ -7,7 +7,7 @@ const CountryList = ({ countries, viewCountry }) => {
         return (
             <div>
                 {countries.map(country =>
-                    <p key={country.cca3}>{country.name.common} <button onClick={viewCountry}>view</button></p>
+                    <p key={country.cca3}>{country.name.common} <button onClick={() => showCountry(country)}>view</button></p>
                 )}
             </div> 
         )

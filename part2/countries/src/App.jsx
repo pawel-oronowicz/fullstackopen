@@ -34,8 +34,8 @@ function App() {
     setFilter(event.target.value)
   }
 
-  const viewCountry = () => {
-    
+  const showCountry = (selectedCountry) => {
+    setFilter(selectedCountry.name.common)
   }
 
   return (
@@ -43,7 +43,7 @@ function App() {
       <CountriesSearch filter={filter} handleCountryFilter={handleCountryFilter} />
       { filteredCountries.length === 1 ? 
         <Country country={filteredCountries[0]} />:
-        <CountryList countries={filteredCountries} viewCountry={viewCountry} />
+        <CountryList countries={filteredCountries} showCountry={showCountry} />
       }
     </div>
   )
