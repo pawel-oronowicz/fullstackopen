@@ -9,7 +9,6 @@ const Weather = ({ name, lat, lon }) => {
         .getWeatherForLatLng(lat, lon)
         .then(returnedWeather => {
             setWeather(returnedWeather)
-            console.log(returnedWeather)
         })
     }, [lat, lon])
 
