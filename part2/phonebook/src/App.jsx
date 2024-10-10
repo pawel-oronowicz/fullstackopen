@@ -59,6 +59,12 @@ const App = () => {
             setNotification({})
           }, 5000)
         })
+        .catch(error => {
+          setNotification({
+            'message': error.response.data.error,
+            'type': 'error'
+          })
+        })
       }
     } else {
       const newObject = {
@@ -81,6 +87,12 @@ const App = () => {
           setNotification({})
         }, 5000)
       })
+      .catch(error => {
+        setNotification({
+          'message': error.response.data.error,
+          'type': 'error'
+        })
+      })
     }
   }
 
@@ -92,10 +104,17 @@ const App = () => {
         .remove(personId)
         .then(() => {
           setPersons(persons.filter((person) => person.id !== personId))
+          setNotification({
+            'message': `${name} has been deleted`,
+            'type': 'success'
+          })
+          setTimeout(() => {
+            setNotification({})
+          }, 5000)
         })
         .catch(error => {
           setNotification({
-            'message': `${name} has already been deleted from the server`,
+            'message': error.response.data.error,
             'type': 'error'
           })
           setTimeout(() => {
