@@ -36,27 +36,4 @@ bloglistRouter.post('/', (request, response, next) => {
     .catch(error => next(error))
 })
 
-bloglistRouter.delete('/:id', (request, response, next) => {
-    Blog.findByIdAndDelete(request.params.id)
-    .then(() => {
-      response.status(204).end()
-    })
-    .catch(error => next(error))
-})
-
-bloglistRouter.put('/:id', (request, response, next) => {
-  const body = request.body
-
-  const blog = {
-    content: body.content,
-    important: body.important,
-  }
-
-  Blog.findByIdAndUpdate(request.params.id, blog, { new: true })
-    .then(updatedBlog => {
-      response.json(updatedBlog)
-    })
-    .catch(error => next(error))
-})
-
 module.exports = bloglistRouter
