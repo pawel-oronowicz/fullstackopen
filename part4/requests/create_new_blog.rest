@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/bloglist
+Content-Type: application/json
+
+{
+  "title": "A very interesting blog title",
+  "author": "Harry Potter",
+  "url": "https://google.com",
+  "likes": 69
+}
